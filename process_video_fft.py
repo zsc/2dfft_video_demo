@@ -49,8 +49,8 @@ def process_video(input_path, output_path):
     print(f"Processing video: {input_path}")
     print(f"Resolution: {width}x{height}, FPS: {fps}, Frames: {total_frames}")
 
-    # Create video writer
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    # Create video writer with H.264 codec for browser compatibility
+    fourcc = cv2.VideoWriter_fourcc(*'avc1')
     out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
 
     frame_count = 0
